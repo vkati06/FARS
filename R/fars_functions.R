@@ -1,3 +1,8 @@
+STATE <- NULL
+MONTH <- NULL
+year <- NULL
+n <- NULL
+
 #' @title Data Input
 #'
 #' @description Reads a csv file (sep = ,) into a tibble.
@@ -82,7 +87,8 @@ fars_read_years <- function(years) {
 #'
 #' @export
 fars_summarize_years <- function(years) {
-        dat_list <- fars_read_years(years)
+  n <- NULL
+  dat_list <- fars_read_years(years)
         dplyr::bind_rows(dat_list) %>%
                 dplyr::group_by(year, MONTH) %>%
                 dplyr::summarize(n = n()) %>%
