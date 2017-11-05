@@ -9,8 +9,6 @@
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
 #'
-#' @examples fars_read("accident_2015.csv.bz2")
-#'
 #' @export
 fars_read <- function(filename) {
         if(!file.exists(filename))
@@ -82,8 +80,6 @@ fars_read_years <- function(years) {
 #' @importFrom dplyr summarize
 #' @importFrom tidyr spread
 #'
-#' @examples fars_summarize_years(c(2013, 2015))
-#'
 #' @export
 fars_summarize_years <- function(years) {
         dat_list <- fars_read_years(years)
@@ -106,8 +102,6 @@ fars_summarize_years <- function(years) {
 #' @importFrom dplyr filter
 #' @importFrom maps map
 #' @importFrom graphics points
-#'
-#' @examples fars_map_state(1, 2015)
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
