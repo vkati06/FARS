@@ -2,6 +2,7 @@ Package: FARS
 Title: FARS functions
 Version: 0.0.0.9000
 Author: Katalin Virag <virag.katalin.11@gmail.com>
+Maintainer: Katalin Virag <virag.katalin.11@gmail.com>
 Description: Functions for analysing FARS data.
 Depends: R (>= 3.4.2)
 License: GPL (>= 2)
