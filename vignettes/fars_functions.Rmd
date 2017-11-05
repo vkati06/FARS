@@ -1,0 +1,61 @@
+---
+title: "FARS Functions"
+author: "Katalin Virag"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, echo = FALSE, message = FALSE}
+library(FARS)
+g <- system.file("extdata", package = "FARS")
+knitr::opts_knit$set(root.dir = g)
+```
+
+These functions can be used to analyse data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
+
+## Functions included in the package
+
+* `fars_read()` to read data.
+* `fars_summarize_years()` to summarize data.
+* `fars_map_state()` to create a map of the events for given state and year.
+
+## Data
+
+This package includes three datasets regarding fatal injuries suffered in motor vehicle traffic crashes in 2013, 2014, and 2015.
+
+### Read in data with `fars_read()`
+
+`fars_read()` allows you to read a comma-separated csv file into a tibble.
+
+The *accident_2015.csv.bz2* file contains the features of events occured in 2015. 
+
+```{r}
+fname <- "accident_2015.csv.bz2"
+fpath <- system.file("extdata", fname, package = "FARS")
+d <- fars_read(fpath)
+```
+
+## Analyse data
+
+### Summarize with `fars_summarize_years()`
+
+`fars_summarize_years()` returns with the number of observations per month in the requested year(s).
+Such summary statistics for years 2013 and 2015 can be obtained as follows:
+
+```{r}
+fars_summarize_years(c(2013, 2015))
+```
+
+### Map of accidents with `fars_map_state()`
+
+`fars_map_state()` creates a map of events for given state and year.
+
+The map of the accidents occured in 2015 in *state 1* can be obtained as follows:
+
+```{r}
+fars_map_state(1, 2015)
+```
