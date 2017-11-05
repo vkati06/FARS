@@ -16,7 +16,3 @@ A warning tells you if the requested year is invalid.
 \description{
 Number of observations per month per year.
 }
-\examples{
-fars_summarize_years(c(2013, 2015))
-
-}

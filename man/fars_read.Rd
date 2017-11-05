@@ -15,7 +15,3 @@ This function returns a tibble. A warning tells you if the requested file does n
 \description{
 Reads a csv file (sep = ,) into a tibble.
 }
-\examples{
-fars_read("accident_2015.csv.bz2")
-
-}

@@ -18,7 +18,3 @@ message is displayed. A warning tells you if there are no accidents to plot.
 \description{
 Create a map of fars events for given state and year.
 }
-\examples{
-fars_map_state(1, 2015)
-
-}
